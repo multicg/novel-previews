@@ -6,6 +6,9 @@
   var BRANCH = "main";
   var MAX_QUOTE_COMMENT_LEN = 1500;
   var NAME_STORAGE_KEY = "novel-previews:commenter-name";
+  var THEME_STORAGE_KEY = "novel-previews:theme";
+  var THEME_CYCLE = [null, "dark", "light"]; // null = 시스템 설정 따라감
+  var THEME_LABEL = { "null": "🌓 자동", "dark": "🌙 다크", "light": "☀️ 라이트" };
 
   function qs(name) {
     return new URLSearchParams(window.location.search).get(name);
@@ -292,7 +295,37 @@
     });
   }
 
+  function getSavedTheme() {
+    try { return window.localStorage.getItem(THEME_STORAGE_KEY); } catch (e) { return null; }
+  }
+
+  function applyTheme(theme) {
+    if (theme === "dark" || theme === "light") {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    try {
+      if (theme) window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+      else window.localStorage.removeItem(THEME_STORAGE_KEY);
+    } catch (e) { /* localStorage 사용 불가 환경 무시 */ }
+  }
+
+  function initThemeToggle() {
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    var current = getSavedTheme();
+    btn.textContent = THEME_LABEL[String(current)];
+    btn.addEventListener("click", function () {
+      var idx = THEME_CYCLE.indexOf(current);
+      current = THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
+      applyTheme(current);
+      btn.textContent = THEME_LABEL[String(current)];
+    });
+  }
+
   async function main() {
+    initThemeToggle();
     var root = document.getElementById("root");
     var manifest;
     try {

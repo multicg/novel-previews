@@ -17,6 +17,22 @@
   }
 }
 
+/* data-theme이 있으면 시스템 설정과 무관하게 강제 적용 (수동 토글) */
+:root[data-theme="light"] {
+  --fg: #1c1c1c;
+  --bg: #fdfcfa;
+  --muted: #767676;
+  --accent: #2f6fed;
+  --border: #e4e0d8;
+}
+:root[data-theme="dark"] {
+  --fg: #eee;
+  --bg: #17181a;
+  --muted: #9a9a9a;
+  --accent: #6ea0ff;
+  --border: #33353a;
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -31,6 +47,20 @@ body {
   max-width: 42rem;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 6rem;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 30;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }

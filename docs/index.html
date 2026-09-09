@@ -5,8 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>novel-previews 읽기</title>
 <link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem("novel-previews:theme");
+    if (saved === "light" || saved === "dark") {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+  } catch (e) { /* localStorage 사용 불가 환경 무시 */ }
+})();
+</script>
 </head>
 <body>
+<button id="theme-toggle" type="button" aria-label="테마 전환"></button>
 <div id="root">불러오는 중…</div>
 <script src="app.js"></script>
 </body>
