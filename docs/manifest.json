@@ -99,6 +99,70 @@
               "file": "version-B.md"
             }
           ]
+        },
+        {
+          "id": "e0007",
+          "label": "7화",
+          "versions": [
+            {
+              "id": "A",
+              "label": "버전 A",
+              "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
+            }
+          ]
+        },
+        {
+          "id": "e0008",
+          "label": "8화",
+          "versions": [
+            {
+              "id": "A",
+              "label": "버전 A",
+              "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
+            }
+          ]
+        },
+        {
+          "id": "e0009",
+          "label": "9화",
+          "versions": [
+            {
+              "id": "A",
+              "label": "버전 A",
+              "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
+            }
+          ]
+        },
+        {
+          "id": "e0010",
+          "label": "10화",
+          "versions": [
+            {
+              "id": "A",
+              "label": "버전 A",
+              "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
+            }
+          ]
         }
       ]
     }
