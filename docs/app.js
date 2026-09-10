@@ -116,9 +116,9 @@
       '<p class="meta"><a href=".">← 목록으로</a></p>',
       "<h1>" + escapeHtml(entry.work.title) + " " + escapeHtml(entry.episode.label) +
         " · " + escapeHtml(entry.version.label) + "</h1>",
+      '<p class="callout">💬 <strong>문장을 마우스로 드래그해서 선택하면 코멘트를 달 수 있어요!</strong></p>',
       '<div id="content">' + parsed.bodyHtml + "</div>",
-      '<p class="hint">문장을 마우스로 드래그해서 선택하면 코멘트를 달 수 있어요. ' +
-        '코멘트는 <a href="https://github.com/' + OWNER + "/" + REPO +
+      '<p class="hint">코멘트는 <a href="https://github.com/' + OWNER + "/" + REPO +
         '/labels/preview-feedback" target="_blank" rel="noopener">새 GitHub 이슈</a>로 등록됩니다. ' +
         '<a href="' + blobUrl(workSlug, episodeId, entry.version.file) +
         '" target="_blank" rel="noopener">원문 GitHub에서 보기</a></p>',

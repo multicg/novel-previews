@@ -5,6 +5,7 @@
   --muted: #767676;
   --accent: #2f6fed;
   --border: #e4e0d8;
+  --callout-bg: #e8f0ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,7 @@
     --muted: #9a9a9a;
     --accent: #6ea0ff;
     --border: #33353a;
+    --callout-bg: #1e2a42;
   }
 }
 
@@ -24,6 +26,7 @@
   --muted: #767676;
   --accent: #2f6fed;
   --border: #e4e0d8;
+  --callout-bg: #e8f0ff;
 }
 :root[data-theme="dark"] {
   --fg: #eee;
@@ -31,6 +34,7 @@
   --muted: #9a9a9a;
   --accent: #6ea0ff;
   --border: #33353a;
+  --callout-bg: #1e2a42;
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -80,6 +84,15 @@ h2 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
   color: var(--muted);
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
+}
+
+.callout {
+  background: var(--callout-bg);
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
 }
 
 .work-list, .episode-list, .version-list {
