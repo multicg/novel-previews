@@ -33,7 +33,9 @@
   --border: #33353a;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -41,26 +43,34 @@ body {
   color: var(--fg);
   font-family: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 #root {
   max-width: 42rem;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 6rem;
+  padding: 3.25rem 1.25rem 6rem;
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
 }
 
 #theme-toggle {
   position: fixed;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: max(0.75rem, env(safe-area-inset-right));
   z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
   background: var(--bg);
   color: var(--fg);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.9rem;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
@@ -78,7 +88,13 @@ h2 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
 }
 
 .work-list > li { margin-bottom: 1.5rem; }
-.episode-list > li { margin-bottom: 0.4rem; }
+.episode-list > li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
 
 .version-list {
   display: inline-flex;
@@ -92,11 +108,14 @@ a {
 a:hover { text-decoration: underline; }
 
 .version-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
   border: 1px solid var(--border);
   border-radius: 0.4rem;
-  padding: 0.1rem 0.6rem;
-  font-size: 0.85rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.9rem;
+  touch-action: manipulation;
 }
 
 #content {
@@ -128,18 +147,21 @@ a:hover { text-decoration: underline; }
   color: #fff;
   border: none;
   border-radius: 999px;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.85rem;
+  min-height: 2.5rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
   z-index: 20;
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .comment-popover {
   position: absolute;
   z-index: 21;
-  width: min(22rem, 90vw);
+  width: min(22rem, calc(100vw - 2rem));
+  max-width: calc(100vw - 2rem);
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 0.6rem;
@@ -160,7 +182,7 @@ a:hover { text-decoration: underline; }
 .comment-popover textarea {
   width: 100%;
   min-height: 4.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px 미만이면 iOS Safari가 포커스 시 자동 확대함 */
   font-family: inherit;
   padding: 0.5rem;
   border: 1px solid var(--border);
@@ -172,8 +194,9 @@ a:hover { text-decoration: underline; }
 
 .comment-popover input[type="text"] {
   width: 100%;
-  font-size: 0.9rem;
-  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  min-height: 2.5rem;
   border: 1px solid var(--border);
   border-radius: 0.4rem;
   background: var(--bg);
@@ -183,6 +206,7 @@ a:hover { text-decoration: underline; }
 
 .comment-popover .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 0.6rem;
@@ -192,6 +216,13 @@ a:hover { text-decoration: underline; }
 .comment-popover .warn {
   color: #d24;
   font-size: 0.8rem;
+}
+
+.comment-popover button.submit,
+.comment-popover button.cancel {
+  min-height: 2.5rem;
+  font-size: 0.95rem;
+  touch-action: manipulation;
 }
 
 .comment-popover button.submit {
@@ -212,4 +243,5 @@ a:hover { text-decoration: underline; }
   border: none;
   color: var(--muted);
   cursor: pointer;
+  padding: 0.45rem 0.6rem;
 }

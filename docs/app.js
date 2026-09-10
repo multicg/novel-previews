@@ -169,16 +169,29 @@
     }
   }
 
+  function positionFab(fab, containerEl, rect) {
+    var containerRect = containerEl.getBoundingClientRect();
+    var fabRect = fab.getBoundingClientRect();
+    var centerX = rect.left - containerRect.left + rect.width / 2;
+    var top = rect.top - containerRect.top;
+    // 선택 영역 위쪽 여백이 부족하면(화면 맨 위 근처 선택 등) 버튼을 아래로 내림
+    var showBelow = top < fabRect.height + 8;
+
+    fab.style.transform = showBelow ? "translate(-50%, 0)" : "translate(-50%, -100%)";
+    fab.style.top = (showBelow ? (rect.bottom - containerRect.top + 8) : top) + "px";
+
+    var half = fabRect.width / 2;
+    var minCenter = half + 4;
+    var maxCenter = Math.max(minCenter, containerRect.width - half - 4);
+    fab.style.left = Math.min(Math.max(centerX, minCenter), maxCenter) + "px";
+  }
+
   function showFab(state, containerEl, rect, quote) {
     removeFab(state);
     var fab = document.createElement("button");
     fab.className = "comment-fab";
     fab.type = "button";
     fab.textContent = "💬 코멘트 달기";
-
-    var containerRect = containerEl.getBoundingClientRect();
-    fab.style.left = (rect.left - containerRect.left + rect.width / 2) + "px";
-    fab.style.top = (rect.top - containerRect.top) + "px";
 
     fab.addEventListener("mousedown", function (e) { e.preventDefault(); });
     fab.addEventListener("click", function () {
@@ -188,6 +201,7 @@
     containerEl.style.position = containerEl.style.position || "relative";
     containerEl.appendChild(fab);
     state.fabEl = fab;
+    positionFab(fab, containerEl, rect);
   }
 
   function removeFab(state) {
@@ -215,9 +229,9 @@
       '<span><button type="button" class="cancel">취소</button> ' +
       '<button type="button" class="submit">GitHub 이슈로 제출</button></span></div>';
 
-    var containerRect = containerEl.getBoundingClientRect();
-    pop.style.left = Math.max(0, rect.left - containerRect.left) + "px";
-    pop.style.top = (rect.top - containerRect.top + rect.height + 8) + "px";
+    containerEl.appendChild(pop);
+    state.popoverEl = pop;
+    positionPopover(pop, containerEl, rect);
 
     var textarea = pop.querySelector("textarea");
     var nameInput = pop.querySelector("input");
@@ -256,9 +270,16 @@
       closePopover(state);
     });
 
-    containerEl.appendChild(pop);
-    state.popoverEl = pop;
     textarea.focus();
+  }
+
+  function positionPopover(pop, containerEl, rect) {
+    var containerRect = containerEl.getBoundingClientRect();
+    var popRect = pop.getBoundingClientRect();
+    var left = rect.left - containerRect.left;
+    var maxLeft = Math.max(4, containerRect.width - popRect.width - 4);
+    pop.style.left = Math.min(Math.max(left, 4), maxLeft) + "px";
+    pop.style.top = (rect.top - containerRect.top + rect.height + 8) + "px";
   }
 
   function attachCommentUI(contentEl, meta) {
@@ -289,10 +310,22 @@
 
     contentEl.addEventListener("mouseup", handleSelectionEnd);
     contentEl.addEventListener("touchend", handleSelectionEnd);
-    document.addEventListener("mousedown", function (e) {
+
+    // 모바일에서 선택 손잡이를 드래그해 범위를 넓히는 경우 touchend가
+    // 손잡이(문서 밖 네이티브 UI)에서 끝나 위 리스너를 못 탈 수 있어,
+    // selectionchange를 보조 신호로 같이 둔다(디바운스로 과호출 방지).
+    var selectionChangeTimer = null;
+    document.addEventListener("selectionchange", function () {
+      clearTimeout(selectionChangeTimer);
+      selectionChangeTimer = setTimeout(handleSelectionEnd, 250);
+    });
+
+    function closeIfOutside(e) {
       if (state.popoverEl && !state.popoverEl.contains(e.target)) closePopover(state);
       if (state.fabEl && !state.fabEl.contains(e.target) && e.target !== state.fabEl) removeFab(state);
-    });
+    }
+    document.addEventListener("mousedown", closeIfOutside);
+    document.addEventListener("touchstart", closeIfOutside, { passive: true });
   }
 
   function getSavedTheme() {
