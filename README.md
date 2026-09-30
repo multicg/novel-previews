@@ -25,8 +25,6 @@ GitHub 로그인 필요). 특정 문장이 별로였거나 좋았으면 짧게�
 - [`composer-again/e0003/`](./composer-again/e0003/) — 3화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0003&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/4))
 - [`composer-again/e0004/`](./composer-again/e0004/) — 4화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0004&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/5))
 - [`composer-again/e0005/`](./composer-again/e0005/) — 5화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0005&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/6))
-- [`composer-again/e0006/`](./composer-again/e0006/) — 6화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0006&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/1))
-- [`composer-again/e0007/`](./composer-again/e0007/) — 7화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0007&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/7))
-- [`composer-again/e0008/`](./composer-again/e0008/) — 8화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0008&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/8))
-- [`composer-again/e0009/`](./composer-again/e0009/) — 9화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0009&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/9))
-- [`composer-again/e0010/`](./composer-again/e0010/) — 10화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0010&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/10))
+
+6~10화는 승격 후 드래프트 원본이 소실돼(novel#167 감사) 더 이상 근거
+있는 비교본을 제공할 수 없어 제거했습니다. 재작업 시 다시 추가합니다.
