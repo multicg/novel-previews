@@ -26,5 +26,16 @@ GitHub 로그인 필요). 특정 문장이 별로였거나 좋았으면 짧게�
 - [`composer-again/e0004/`](./composer-again/e0004/) — 4화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0004&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/5))
 - [`composer-again/e0005/`](./composer-again/e0005/) — 5화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0005&version=A) · [투표하기](https://github.com/multicg/novel-previews/discussions/6))
 
-6~10화는 승격 후 드래프트 원본이 소실돼(novel#167 감사) 더 이상 근거
-있는 비교본을 제공할 수 없어 제거했습니다. 재작업 시 다시 추가합니다.
+### 6~10화 — 이어서 계속 읽어보기
+
+위 1~5화는 문체 비교였지만, 여기부터는 비교가 아니라 **이야기를
+계속 진행시켜 봤을 때 더 재미있어지는지** 확인하는 구간입니다 —
+버전 비교 없이 한 가지 버전만 올립니다. 재밌어졌는지, 여전히
+심심한지 편하게 알려주세요. (문장 단위 코멘트는 위 "드래그해서
+코멘트 달기" 기능을 그대로 쓸 수 있어요.)
+
+- [`composer-again/e0006/`](./composer-again/e0006/) — 6화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0006&version=A))
+- [`composer-again/e0007/`](./composer-again/e0007/) — 7화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0007&version=A))
+- [`composer-again/e0008/`](./composer-again/e0008/) — 8화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0008&version=A))
+- [`composer-again/e0009/`](./composer-again/e0009/) — 9화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0009&version=A))
+- [`composer-again/e0010/`](./composer-again/e0010/) — 10화 ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0010&version=A))
