@@ -9,5 +9,5 @@
 
 ## 다 읽으셨다면
 
-[투표 스레드](https://github.com/multicg/novel-previews/discussions/12)에서 마음에 든 버전 댓글에 👍를 눌러주세요. 그동안은 읽다가
+[투표 스레드](https://github.com/multicg/novel-previews/discussions/12)에서 마음에 든 버전 댓글에 👍를 눌러주세요. 읽다가
 걸리는 문장에 "드래그해서 코멘트 달기"로 의견을 남겨주셔도 좋습니다.
