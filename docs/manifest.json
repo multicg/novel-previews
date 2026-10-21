@@ -280,6 +280,21 @@
               "id": "A",
               "label": "버전 A",
               "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
+            },
+            {
+              "id": "C",
+              "label": "버전 C",
+              "file": "version-C.md"
+            },
+            {
+              "id": "D",
+              "label": "버전 D",
+              "file": "version-D.md"
             }
           ]
         },
@@ -302,6 +317,11 @@
               "id": "A",
               "label": "버전 A",
               "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
             }
           ]
         },
@@ -401,6 +421,11 @@
               "id": "A",
               "label": "버전 A",
               "file": "version-A.md"
+            },
+            {
+              "id": "B",
+              "label": "버전 B",
+              "file": "version-B.md"
             }
           ]
         }
