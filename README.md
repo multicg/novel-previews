@@ -45,9 +45,9 @@ GitHub 로그인 필요). 특정 문장이 별로였거나 좋았으면 짧게�
 6화 이후는 한 가지 버전만 이어 읽는 구간이었지만, 이 세 화는 같은
 사건을 서로 다른 문체로 쓴 버전을 함께 올려 비교합니다. 어느 쪽이
 원래 쓰던 스타일이고 어느 쪽이 새로 시도해본 스타일인지는 밝히지
-않았어요 — 편견 없이 읽고 골라주세요. (투표 스레드는 준비되는 대로
-각 화 폴더의 안내에 링크를 답니다. 문장 단위 코멘트는 위 "드래그해서
-코멘트 달기" 기능을 그대로 쓸 수 있어요.)
+않았어요 — 편견 없이 읽고 골라주세요. 투표는 화별 스레드에서 받아요 —
+[14화](https://github.com/multicg/novel-previews/discussions/11) · [16화](https://github.com/multicg/novel-previews/discussions/12) · [25화](https://github.com/multicg/novel-previews/discussions/13). 문장 단위 코멘트는 위
+"드래그해서 코멘트 달기" 기능을 그대로 쓸 수 있어요.
 
 - [`composer-again/e0014/`](./composer-again/e0014/) — 14화, 버전 A~D ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0014&version=A))
 - [`composer-again/e0016/`](./composer-again/e0016/) — 16화, 버전 A~B ([읽기](https://multicg.github.io/novel-previews/?work=composer-again&episode=e0016&version=A))
